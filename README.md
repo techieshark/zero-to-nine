@@ -10,6 +10,9 @@ Spell out whole numbers up to (and including) nine (e.g., zero, one, 10, 96, 104
 
 Yeah, it's stupid simple.
 
+Need to count to sixteen? See [num-to-word](https://www.npmjs.com/package/num-to-word).
+Need to count to a billion or even a centillion? See [num2word](https://www.npmjs.com/package/num2word).
+
 ## Install
 
 ```
