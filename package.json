@@ -1,6 +1,6 @@
 {
   "name": "zero-to-nine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Numbers to words, in roughly APA style (0-9 only).",
   "main": "lib/index.js",
   "scripts": {
