@@ -16,7 +16,7 @@ Need to count to a billion or even a centillion? See [num2word](https://www.npmj
 ## Install
 
 ```
-npm install --save
+npm install --save zero-to-nine
 ```
 
 ## Example Usage
