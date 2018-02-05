@@ -1,0 +1,45 @@
+{
+  "name": "zero-to-nine",
+  "version": "1.0.0",
+  "description": "Numbers to words, in roughly APA style (0-9 only).",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "flow": "flow",
+    "lint": "eslint src/",
+    "lint-which": "which eslint",
+    "build": "yarn build:clean && yarn build:lib && yarn build:flow",
+    "build:clean": "rimraf lib",
+    "build:lib": "babel src/ -d lib --copy-files --ignore '**/__tests__/**,**.test.*'",
+    "build:flow": "flow-copy-source -v -i '**.test.*' src lib",
+    "prepublish": "yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techieshark/zero-to-nine.git"
+  },
+  "keywords": [
+    "text",
+    "words",
+    "APA",
+    "style"
+  ],
+  "author": "Peter W (@techieshark)",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^4.16.0",
+    "eslint-plugin-flowtype": "^2.42.0",
+    "flow-bin": "^0.64.0",
+    "flow-copy-source": "^1.2.2",
+    "rimraf": "^2.6.2"
+  },
+  "bugs": {
+    "url": "https://github.com/techieshark/zero-to-nine/issues"
+  },
+  "homepage": "https://github.com/techieshark/zero-to-nine#readme"
+}
