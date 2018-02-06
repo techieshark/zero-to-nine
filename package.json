@@ -1,7 +1,7 @@
 {
   "name": "zero-to-nine",
   "version": "1.0.1",
-  "description": "Numbers to words, in roughly APA style (0-9 only).",
+  "description": "Numbers to words, in roughly APA style (0-9 only), all others unchanged.",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
