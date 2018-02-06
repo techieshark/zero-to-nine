@@ -7,12 +7,12 @@ const zeroToNine = [
 
 /** Turns input number `n` into a word, if possible.
  * Roughly APA style: integers 0 to 9 become 'zero' to 'nine'. Floats
- * and anything bigger or smaller, are returned as is (not expressed as words).
- * Word for `zero` can be customized - you could use "no", "zilch", "nada" or whatever you want.
+ * and anything bigger or smaller are returned as is (not expressed as words).
+ * Word for `zero` can be customized - you could use "no", "zilch", "nada" or anything else.
  * @param {number} n the number to convert
- * @param {string} [zero="zero"] Use this string in place of the default of "zero".
+ * @param {string} [zero="zero"] Alternative word for "zero".
  */
-function numToText(n: number, zero: string = 'zero'): string {
+function asWord(n: number, zero: string = 'zero'): string {
   if (n === 0)
     return zero;
   else if (n > 0 && n <= 9 && Number.isInteger(n))
@@ -21,4 +21,4 @@ function numToText(n: number, zero: string = 'zero'): string {
     return (n).toString();
 }
 
-export {numToText};
+module.exports.asWord = asWord;
