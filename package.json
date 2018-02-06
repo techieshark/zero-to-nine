@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "flow": "flow",
     "lint": "eslint src/",
-    "lint-which": "which eslint",
     "build": "yarn build:clean && yarn build:lib && yarn build:flow",
     "build:clean": "shx rm -rf lib",
     "build:lib": "babel src/ -d lib --copy-files --ignore '**/__tests__/**,**.test.*'",
