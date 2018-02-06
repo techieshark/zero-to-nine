@@ -9,7 +9,7 @@
     "lint": "eslint src/",
     "lint-which": "which eslint",
     "build": "yarn build:clean && yarn build:lib && yarn build:flow",
-    "build:clean": "rimraf lib",
+    "build:clean": "shx rm -rf lib",
     "build:lib": "babel src/ -d lib --copy-files --ignore '**/__tests__/**,**.test.*'",
     "build:flow": "flow-copy-source -v -i '**.test.*' src lib",
     "prepublish": "yarn build"
@@ -36,7 +36,7 @@
     "eslint-plugin-flowtype": "^2.42.0",
     "flow-bin": "^0.64.0",
     "flow-copy-source": "^1.2.2",
-    "rimraf": "^2.6.2"
+    "shx": "^0.2.2"
   },
   "bugs": {
     "url": "https://github.com/techieshark/zero-to-nine/issues"
