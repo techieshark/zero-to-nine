@@ -38,6 +38,7 @@
     "eslint-plugin-flowtype": "^2.42.0",
     "flow-bin": "^0.64.0",
     "flow-copy-source": "^1.2.2",
+    "npm-publish-git": "git://github.com/andreineculau/npm-publish-git.git",
     "shx": "^0.2.2"
   },
   "config": {
@@ -50,8 +51,8 @@
       "script": "npm pack && tar xvzf $npm_package_config_pkgFile",
       "commit": "Automatic update from build",
       "user": {
-          "email": "techieshark@gmail.com",
-          "name": "Peter W (digital clone)"
+        "email": "techieshark@gmail.com",
+        "name": "Peter W (digital clone)"
       }
     }
   },
