@@ -16,6 +16,8 @@ Need to count to a billion or even a centillion? See [num2word](https://www.npmj
 ## Install
 
 ```
+npm install --save git://github.com/techieshark/zero-to-nine.git#dist
+#or
 npm install --save zero-to-nine
 ```
 
