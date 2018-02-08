@@ -11,7 +11,7 @@ module.exports = {
   ],
   "parser": "babel-eslint",
   "parserOptions": {
-    "ecmaVersion": 6
+    "ecmaVersion": 6,
     "sourceType": "module",
     // see: "https://stackoverflow.com/questions/36327096/vscode-linter-es6-es7-babel-linter#36327097"
   },
