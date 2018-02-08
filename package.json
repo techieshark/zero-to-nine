@@ -3,6 +3,10 @@
   "version": "1.0.2",
   "description": "Numbers to words, in roughly APA style (0-9 only), all others unchanged.",
   "main": "lib/index.js",
+  "files": [
+    "lib",
+    "yarn.lock"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy:git": "yarn deploy:clean && deploy-to-git",

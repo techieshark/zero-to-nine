@@ -1,8 +1,0 @@
-# dist doesn't need src/
-src/
-.babelrc
-.eslintrc.js
-.flowconfig
-build/
-package/
-zero-to-nine-*.tgz
