@@ -3,13 +3,17 @@
   "version": "1.0.2",
   "description": "Numbers to words, in roughly APA style (0-9 only), all others unchanged.",
   "main": "lib/index.js",
+  "files": [
+    "lib",
+    "yarn.lock"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy:git": "yarn deploy:clean && deploy-to-git",
     "deploy:clean": "shx rm -rf $npm_package_config_pkgDir",
     "flow": "flow",
     "lint": "eslint src/",
-    "build": "ls package ||true && yarn build:clean && yarn build:lib && yarn build:flow && ls -la package || true",
+    "build": "yarn build:clean && yarn build:lib && yarn build:flow",
     "build:clean": "shx rm -rf lib",
     "build:lib": "babel src/ -d lib --copy-files --ignore '**/__tests__/**,**.test.*'",
     "build:flow": "flow-copy-source -v -i '**.test.*' src lib",
@@ -38,6 +42,7 @@
     "eslint-plugin-flowtype": "^2.42.0",
     "flow-bin": "^0.64.0",
     "flow-copy-source": "^1.2.2",
+    "npm-publish-git": "git://github.com/andreineculau/npm-publish-git.git",
     "shx": "^0.2.2"
   },
   "config": {
@@ -47,11 +52,11 @@
       "repository": "https://$GH_TOKEN@github.com/techieshark/zero-to-nine.git",
       "branch": "dist",
       "folder": "$npm_package_config_pkgDir",
-      "script": "npm pack && tar xvzf $npm_package_config_pkgFile",
-      "commit": "Automatic update from build",
+      "script": "npm pack && tar xzf $npm_package_config_pkgFile",
+      "commit": "Automatic update from build, version $npm_package_version",
       "user": {
-          "email": "techieshark@gmail.com",
-          "name": "Peter W (digital clone)"
+        "email": "techieshark@gmail.com",
+        "name": "Peter W (digital clone)"
       }
     }
   },
