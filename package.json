@@ -55,7 +55,7 @@
       "script": "npm pack && tar xzf $npm_package_config_pkgFile",
       "commit": "Automatic update from build, version $npm_package_version",
       "user": {
-        "email": "techieshark@gmail.com",
+        "email": "1072292+techieshark@users.noreply.github.com",
         "name": "Peter W (digital clone)"
       }
     }
