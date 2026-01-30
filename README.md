@@ -1,4 +1,4 @@
-# zero-to-nine: tiny node JS module for numbers 0-9
+# zero-to-nine: 0-9, as words
 
 Converts numbers 0 to 9 to words (that's roughly
 [APA style][1] if you want to get specific). Other numbers returned unchanged.
@@ -16,9 +16,9 @@ Need to count to a billion or even a centillion? See [num2word](https://www.npmj
 ## Install
 
 ```
-npm install --save git://github.com/techieshark/zero-to-nine.git#dist
-#or
 npm install --save zero-to-nine
+# or
+npm install --save git://github.com/techieshark/zero-to-nine.git#dist
 ```
 
 ## Example Usage
@@ -26,14 +26,20 @@ npm install --save zero-to-nine
 ```
 var asWord = require('zero-to-nine').asWord
 
-let randomInteger = Math.floor(Math.random() * 100)
-console.log(`I only have ${asWord(randomInteger)} cents; that's not a dollar.`)
-// output ex. 1: "I only have seven cents; that's not a dollar."
-// output ex. 2: "I only have 10 cents; that's not a dollar."
+asWord(0)
+// "zero"
 
-// customizing: use "no" (or something else) instead of "zero" if you want.
-let nAfterTheWall = 0
-console.log(`There were ${asWord(nAfterTheWall, 'no')} desert big horn sheep left after they built the wall.`)
-// output: "There were no desert big horn sheep left after they built the wall."
+asWord(13)
+// "13"
+```
+
+## More examples
+
+You can use "no" (or something else) instead of "zero" if you want:
+
+```
+let count = 0
+console.log(`There were ${asWord(count, 'no')} desert big horn sheep left after they built the wall.`)
+// "There were no desert big horn sheep left after they built the wall."
 ```
 

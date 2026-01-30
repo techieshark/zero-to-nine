@@ -1,23 +1,22 @@
 {
   "name": "zero-to-nine",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Numbers to words, in roughly APA style (0-9 only), all others unchanged.",
   "main": "lib/index.js",
   "files": [
-    "lib",
-    "yarn.lock"
+    "lib"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy:git": "yarn deploy:clean && deploy-to-git",
+    "test": "npm run flow && npm run lint",
     "deploy:clean": "shx rm -rf $npm_package_config_pkgDir",
+    "deploy:git": "npm run deploy:clean && npx deploy-to-git",
     "flow": "flow",
-    "lint": "eslint src/",
-    "build": "yarn build:clean && yarn build:lib && yarn build:flow",
+    "lint": "eslint src/ && echo No lint issues!",
+    "build": "npm run build:clean && npm run test && npm run build:lib && npm run build:flow",
     "build:clean": "shx rm -rf lib",
     "build:lib": "babel src/ -d lib --copy-files --ignore '**/__tests__/**,**.test.*'",
     "build:flow": "flow-copy-source -v -i '**.test.*' src lib",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -26,24 +25,25 @@
   "keywords": [
     "text",
     "words",
-    "APA",
-    "style"
+    "APA style"
   ],
   "author": "Peter W (@techieshark)",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-flow": "^6.23.0",
-    "deploy-to-git": "^0.1.5",
-    "eslint": "^4.16.0",
-    "eslint-plugin-flowtype": "^2.42.0",
-    "flow-bin": "^0.64.0",
-    "flow-copy-source": "^1.2.2",
-    "npm-publish-git": "git://github.com/andreineculau/npm-publish-git.git",
-    "shx": "^0.2.2"
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.28.6",
+    "@babel/eslint-parser": "^7.28.6",
+    "@babel/preset-env": "^7.28.6",
+    "@babel/preset-flow": "^7.27.1",
+    "babel-plugin-syntax-hermes-parser": "^0.33.3",
+    "deploy-to-git": "^0.4.1",
+    "eslint": "^9.39.2",
+    "eslint-plugin-ft-flow": "^3.0.11",
+    "flow-bin": "^0.285.0",
+    "flow-copy-source": "^2.0.9",
+    "globals": "^17.2.0",
+    "hermes-eslint": "^0.33.3",
+    "shx": "^0.4.0"
   },
   "config": {
     "pkgFile": "$npm_package_name-$npm_package_version.tgz",
@@ -55,7 +55,7 @@
       "script": "npm pack && tar xzf $npm_package_config_pkgFile",
       "commit": "Automatic update from build, version $npm_package_version",
       "user": {
-        "email": "techieshark@gmail.com",
+        "email": "1072292+techieshark@users.noreply.github.com",
         "name": "Peter W (digital clone)"
       }
     }
