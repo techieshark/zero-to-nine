@@ -4,20 +4,19 @@
   "description": "Numbers to words, in roughly APA style (0-9 only), all others unchanged.",
   "main": "lib/index.js",
   "files": [
-    "lib",
-    "yarn.lock"
+    "lib"
   ],
   "scripts": {
-    "test": "yarn flow && yarn lint",
-    "deploy:git": "yarn deploy:clean && deploy-to-git",
+    "test": "npm run flow && npm run lint",
     "deploy:clean": "shx rm -rf $npm_package_config_pkgDir",
+    "deploy:git": "npm run deploy:clean && npx deploy-to-git",
     "flow": "flow",
     "lint": "eslint src/ && echo No lint issues!",
-    "build": "yarn build:clean && yarn test && yarn build:lib && yarn build:flow",
+    "build": "npm run build:clean && npm run test && npm run build:lib && npm run build:flow",
     "build:clean": "shx rm -rf lib",
     "build:lib": "babel src/ -d lib --copy-files --ignore '**/__tests__/**,**.test.*'",
     "build:flow": "flow-copy-source -v -i '**.test.*' src lib",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
