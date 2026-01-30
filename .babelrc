@@ -1,4 +1,4 @@
 {
-  "presets": ["env", "flow"],
-  "plugins": ["transform-flow-strip-types"]
+  "presets": ["@babel/preset-env", "@babel/preset-flow"],
+  "plugins": ["babel-plugin-syntax-hermes-parser"],
 }
